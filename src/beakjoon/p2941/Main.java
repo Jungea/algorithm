@@ -3,6 +3,7 @@
  * 작성일: 2019.09.27.
  * 백준 2941. 크로아티아 알파벳
  */
+xxxxxxxxxxxxxxxxxxxxxx
 
 package beakjoon.p2941;
 
@@ -18,8 +19,8 @@ public class Main {
 		String s = reader.readLine();
 
 		int count = 0;
-		int i = -1;
-		while (i < s.length() - 1) {
+		int i = s.length();
+		while (i > 0) {
 			i++;
 			switch (s.charAt(i)) {
 
