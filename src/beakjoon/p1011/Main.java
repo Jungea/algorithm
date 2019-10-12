@@ -23,6 +23,7 @@ public class Main {
 		int x = Integer.parseInt(tokenizer.nextToken());
 		int y = Integer.parseInt(tokenizer.nextToken());
 		
+	
 		}
 	}
 
