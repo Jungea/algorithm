@@ -1,7 +1,7 @@
 /*
  * 작성자: 정은애
- * 작성일: 2019.09.20.
- * 백준 8958. OX퀴즈
+ * 작성일: 2019.11.10.
+ * 백준 9020. 골드바흐의 추측
  */
 
 package beakjoon.p9020;
@@ -25,15 +25,15 @@ public class Main {
 
 		for (int i = 0; i < t; i++) {
 			int n = Integer.parseInt(reader.readLine());
-			int nHalfIndex = Collections.binarySearch(prime, n / 2);
-			if (nHalfIndex < 0) // 없을 경우 list에서 사이값 중 작은 값을 저장
-				nHalfIndex = (-nHalfIndex - 1) - 1;
+			int nHalfIndex = Collections.binarySearch(prime, n / 2); // n/2의 위치 찾기
+			if (nHalfIndex < 0)
+				nHalfIndex = (-nHalfIndex - 1) - 1; // 없을 경우 list에서 사이값 중 작은 값을 저장
 
 			String partition = "";
 			for (int j = nHalfIndex; j > -1; j--) {
 				int p = n - prime.get(j);
 
-				if (Collections.binarySearch(prime, p) >= 0) {
+				if (Collections.binarySearch(prime, p) >= 0) { // 해당값이 있을 경우 출력
 					partition = prime.get(j) + " " + p;
 					break;
 				}
@@ -47,6 +47,7 @@ public class Main {
 
 	}
 
+	// 소수 리스트 리턴해주는 메소드
 	static List<Integer> getPrimeNumbers(int n) {
 		boolean[] prime = new boolean[n + 1];
 		Arrays.fill(prime, true);
